@@ -1,0 +1,7 @@
+channels:
+- conda-forge
+dependencies:
+- executorlib =1.7.4
+- pyiron_base =0.15.12
+- pyiron_workflow =0.15.4
+- python-workflow-definition =0.1.2
