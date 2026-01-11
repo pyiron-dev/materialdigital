@@ -1,0 +1,58 @@
+name: Pipeline
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+
+jobs:
+  nfdi4ing:
+    runs-on: ubuntu-22.04
+    steps:
+    - uses: actions/checkout@v4
+    - name: Conda config
+      run: echo -e "channels:\n  - conda-forge\n" > .condarc
+    - uses: conda-incubator/setup-miniconda@v3
+      with:
+        python-version: "3.12"
+        miniforge-version: latest
+        condarc-file: .condarc
+        environment-file: binder/environment.yml
+    - name: Installation and setup
+      shell: bash -l {0}
+      run: |
+        conda install -c conda-forge jupyter papermill
+        sudo apt-get install -y $(cat binder/apt.txt)
+    - name: Create Additional Conda Environments
+      shell: bash -l {0}
+      run: |
+        conda env create -n preprocessing -f source/envs/preprocessing.yaml -y
+        conda env create -n processing -f source/envs/processing.yaml -y
+        conda env create -n postprocessing -f source/envs/postprocessing.yaml -y
+    - name: Tests
+      shell: bash -l {0}
+      run: |
+        papermill pyiron_base.ipynb pyiron_base_out.ipynb -k "python3"
+        papermill pyiron_workflow.ipynb pyiron_workflow_out.ipynb -k "python3"
+        papermill executorlib.ipynb executorlib_out.ipynb -k "python3"
+
+  documentation:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Conda config
+      run: echo -e "channels:\n  - conda-forge\n" > .condarc
+    - uses: conda-incubator/setup-miniconda@v3
+      with:
+        python-version: "3.12"
+        miniforge-version: latest
+        condarc-file: .condarc
+        environment-file: book/environment.yml
+    - name: Install Jupyterbook
+      shell: bash -l {0}
+      run: |
+        cp book/_config.yml .
+        cp book/_toc.yml .
+        jupyter-book build . --path-output public
+        mv public/_build/html public_html
+        touch public_html/.nojekyll
