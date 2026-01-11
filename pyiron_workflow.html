@@ -399,6 +399,7 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pyiron_workflow</span><span class="w"> </span><span class="kn">import</span> <span class="n">Workflow</span><span class="p">,</span> <span class="n">to_function_node</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pyironflow</span><span class="w"> </span><span class="kn">import</span> <span class="n">PyironFlow</span>
 
 <span class="kn">from</span><span class="w"> </span><span class="nn">python_workflow_definition.pyiron_workflow</span><span class="w"> </span><span class="kn">import</span> <span class="n">write_workflow_json</span>
 </pre></div>
@@ -509,8 +510,18 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/96e905e5f0ad07439c8ee900ec41b57049069708d9b8a30f78b2f963daa683f3.svg" src="_images/96e905e5f0ad07439c8ee900ec41b57049069708d9b8a30f78b2f963daa683f3.svg" />
+<img alt="_images/8a269771ab942f5a35849e0d39c596cf3d3490a6956956a38d220a6808a0bd21.svg" src="_images/8a269771ab942f5a35849e0d39c596cf3d3490a6956956a38d220a6808a0bd21.svg" />
 </div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pf</span> <span class="o">=</span> <span class="n">PyironFlow</span><span class="p">([</span><span class="n">wf</span><span class="p">])</span>
+<span class="n">pf</span><span class="o">.</span><span class="n">gui</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "225b6cd9e1db46e6baab3790c6fc2a7d", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -544,7 +555,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/5cb28d7df624dc3428158f29c1d8c586fb023f6e510bd31e1df3c30f46af37ec.svg" src="_images/5cb28d7df624dc3428158f29c1d8c586fb023f6e510bd31e1df3c30f46af37ec.svg" />
+<img alt="_images/5cff778373065873882d088e09160a77ee3a2c18d2344205a8b4d477e44d317e.svg" src="_images/5cff778373065873882d088e09160a77ee3a2c18d2344205a8b4d477e44d317e.svg" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -554,15 +565,21 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The job generate_mesh_47725c16637f799ac042e47468005db3 was saved and received the ID: 1
-The job convert_to_xdmf_d6a46eb9a4ec352aa996e783ec3c785f was saved and received the ID: 2
-The job poisson_3c147fc86db87cf0c0f94bda333f8cd8 was saved and received the ID: 3
-The job plot_over_line_ef50933291910dadcc8311924971e127 was saved and received the ID: 4
-The job substitute_macros_63766eafd6b1980c7832dd8c9a97c96e was saved and received the ID: 5
-The job compile_paper_128d1d58374953c00e95b8de62cbb10b was saved and received the ID: 6
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The job generate_mesh_aac69fbaceeeff047d2136e52922192a was saved and received the ID: 25
+The job convert_to_xdmf_52420279e23310f0477910acac93ce14 was saved and received the ID: 26
+The job poisson_1154f2a730887c7774da02cc77d9b194 was saved and received the ID: 27
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;/home/jovyan/example_workflows/nfdi/postprocessing/paper.pdf&#39;
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/jan/miniforge3/envs/processing/lib/python3.9/site-packages/ufl/__init__.py:250: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools&lt;81.
+  import pkg_resources
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The job plot_over_line_6b1affcb3a618483159fd6d75c985b82 was saved and received the ID: 28
+The job substitute_macros_783188211c0cbfb785e10a750a4f8243 was saved and received the ID: 29
+The job compile_paper_78b27eddb2cdc36c79a4a0e28935921f was saved and received the ID: 30
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;/home/jan/notebooks/2026/2026-01-11-materialdigital/postprocessing/paper.pdf&#39;
 </pre></div>
 </div>
 </div>
@@ -591,10 +608,21 @@ The job compile_paper_128d1d58374953c00e95b8de62cbb10b was saved and received th
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/jan/miniforge3/envs/processing/lib/python3.9/site-packages/ufl/__init__.py:250: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools&lt;81.
+  import pkg_resources
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">result</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;/home/jan/notebooks/2026/2026-01-11-materialdigital/postprocessing/paper.pdf&#39;
 </pre></div>
 </div>
 </div>

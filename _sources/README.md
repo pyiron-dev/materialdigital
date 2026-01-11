@@ -10,4 +10,8 @@ Based on the [NFDI4Ing Workflow Benchmark](https://github.com/BAMresearch/NFDI4I
 
 Demonstration: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/pyiron-dev/materialdigital/HEAD)
 
+Screenshot:
+
+![Workflow](book/workflow.png)
+
 The [NFDI4Ing Workflow Benchmark](https://github.com/BAMresearch/NFDI4IngScientificWorkflowRequirements) is implemented with each of the workflow frameworks, stored in the [Python Workflow Definition](https://github.com/pythonworkflow) and afterwards reloaded with the other two frameworks. This highlights the interoperability of the workflow frameworks developed as part of the [pyiron project](https://pyiron.org). 
