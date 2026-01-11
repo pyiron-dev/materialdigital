@@ -398,7 +398,7 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">workflow_file_name</span> <span class="o">=</span> <span class="s2">&quot;workflow_executorlib.json&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">workflow_json_filename</span> <span class="o">=</span> <span class="s2">&quot;workflow_executorlib.json&quot;</span>
 </pre></div>
 </div>
 </div>
@@ -408,7 +408,7 @@ document.write(`
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">domain_size</span> <span class="o">=</span> <span class="mf">2.0</span>
 <span class="n">source_directory</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">curdir</span><span class="p">,</span> <span class="s2">&quot;source&quot;</span><span class="p">))</span>
 
-<span class="k">with</span> <span class="n">SingleNodeExecutor</span><span class="p">(</span><span class="n">export_workflow_filename</span><span class="o">=</span><span class="n">workflow_file_name</span><span class="p">)</span> <span class="k">as</span> <span class="n">exe</span><span class="p">:</span>
+<span class="k">with</span> <span class="n">SingleNodeExecutor</span><span class="p">(</span><span class="n">export_workflow_filename</span><span class="o">=</span><span class="n">workflow_json_filename</span><span class="p">)</span> <span class="k">as</span> <span class="n">exe</span><span class="p">:</span>
     <span class="n">gmsh_output_file</span> <span class="o">=</span> <span class="n">exe</span><span class="o">.</span><span class="n">submit</span><span class="p">(</span>
         <span class="n">generate_mesh</span><span class="p">,</span>
         <span class="n">domain_size</span><span class="o">=</span><span class="n">domain_size</span><span class="p">,</span>
