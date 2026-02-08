@@ -1,3 +1,14 @@
 conda env create -n preprocessing -f source/envs/preprocessing.yaml -y
 conda env create -n processing -f source/envs/processing.yaml -y
 conda env create -n postprocessing -f source/envs/postprocessing.yaml -y
+
+conda install -c conda-forge hatchling hatch-vcs hatch-jupyter-builder
+
+git clone https://github.com/pyiron/pyiron_core.git
+cd pyiron_core
+cp pyiron_core/pyiron_nodes/utilities.py .
+rm -rf pyiron_core/pyiron_nodes
+mkdir pyiron_core/pyiron_nodes
+touch pyiron_core/pyiron_nodes/__init__.py
+mv utilities.py pyiron_core/pyiron_nodes/utilities.py
+pip install . --no-deps --no-build-isolation
