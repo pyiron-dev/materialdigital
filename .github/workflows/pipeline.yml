@@ -25,9 +25,11 @@ jobs:
         sudo apt-get install -y $(cat binder/apt.txt)
         git clone https://github.com/pyiron/pyiron_core.git
         cd pyiron_core
+        cp pyiron_core/pyiron_nodes/utilities.py .
         rm -rf pyiron_core/pyiron_nodes
         mkdir pyiron_core/pyiron_nodes
         touch pyiron_core/pyiron_nodes/__init__.py
+        mv utilities.py pyiron_core/pyiron_nodes/utilities.py
         pip install . --no-deps --no-build-isolation
     - name: Create Additional Conda Environments
       shell: bash -l {0}
