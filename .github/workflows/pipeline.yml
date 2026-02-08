@@ -23,7 +23,12 @@ jobs:
       run: |
         conda install -c conda-forge jupyter papermill hatchling hatch-vcs hatch-jupyter-builder
         sudo apt-get install -y $(cat binder/apt.txt)
-        pip install git+https://github.com/pyiron/pyiron_core.git --no-deps --no-build-isolation
+        git clone https://github.com/pyiron/pyiron_core.git
+        cd pyiron_core
+        rm -rf pyiron_core/pyiron_nodes
+        mkdir pyiron_core/pyiron_nodes
+        touch pyiron_core/pyiron_nodes/__init__.py
+        pip install . --no-deps --no-build-isolation
     - name: Create Additional Conda Environments
       shell: bash -l {0}
       run: |
