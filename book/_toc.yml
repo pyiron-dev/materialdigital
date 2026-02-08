@@ -1,6 +1,7 @@
 format: jb-book
 root: README
 chapters:
-- file: pyiron_base.ipynb
-- file: pyiron_workflow.ipynb
 - file: executorlib.ipynb
+- file: pyiron_base.ipynb
+- file: pyiron_core.ipynb
+- file: pyiron_workflow.ipynb

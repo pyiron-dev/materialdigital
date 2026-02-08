@@ -1,3 +1,5 @@
 conda env create -n preprocessing -f source/envs/preprocessing.yaml -y
 conda env create -n processing -f source/envs/processing.yaml -y
 conda env create -n postprocessing -f source/envs/postprocessing.yaml -y
+
+pip install git+https://github.com/pyiron/pyiron_core.git --no-deps --no-build-isolation
